@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tavonga 💖</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#ffb6e6,#b8e0ff,#ffd6a5);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 70px;
+  text-shadow: 0 5px 15px #ff4fa3;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 20px;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+button {
+  margin-top: 30px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #ff4fa3;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px #ff69b4;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: rgba(255,255,255,.25);
+  padding: 30px;
+  width: 220px;
+  border-radius: 25px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+.card h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.flowers {
+  font-size: 50px;
+  margin: 20px;
+}
+
+.heart {
+  position: fixed;
+  bottom: -50px;
+  font-size: 25px;
+  animation: float 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+footer {
+  padding: 30px;
+  background: rgba(0,0,0,.15);
+}
+</style>
+</head>
+
+<body>
+
+<section>
+  <div class="flowers">🌸 🌷 🌺 🌹 🌸</div>
+
+  <h1>Tavonga 💖</h1>
+
+  <p>
+    A little colourful corner made just for you ✨
+  </p>
+
+  <button onclick="surprise()">Open your surprise 💕</button>
+</section>
+
+<section>
+  <h2>A Little Something 🌸</h2>
+
+  <p>
+    Sometimes a simple smile can make someone's whole day better.
+    Keep being yourself and keep spreading those good vibes ✨
+  </p>
+
+  <div class="flowers">🌻 🌷 🌼 🌹</div>
+</section>
+
+<section>
+  <h2>Good Vibes Only 💕</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>🌸 Flowers</h3>
+      <p>Because flowers make everything better.</p>
+    </div>
+
+    <div class="card">
+      <h3>✨ Good Vibes</h3>
+      <p>Keep smiling and enjoy the little things.</p>
+    </div>
+
+    <div class="card">
+      <h3>💖 Be You</h3>
+      <p>You don't need to be anyone else.</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>🌷 A Tiny Message 🌷</h2>
+
+  <p id="message">
+    Click the button above for a little surprise 💕
+  </p>
+
+  <div class="flowers">
+    🌸 🌺 🌷 🌹 🌻
+  </div>
+</section>
+
+<footer>
+  Made with 💖 for Tavonga 🌸✨🌷
+</footer>
+
+<script>
+
+function surprise() {
+  document.getElementById("message").innerHTML =
+  "Tavonga, keep smiling, keep shining and keep being amazing! 💖✨🌸";
+
+  for (let i = 0; i < 15; i++) {
+    let heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration =
+      (Math.random() * 3 + 3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 6000);
+  }
+}
+
+</script>
+
+</body>
+</html>
